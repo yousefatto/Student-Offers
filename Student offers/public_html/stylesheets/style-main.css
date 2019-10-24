@@ -1,0 +1,1019 @@
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+body {
+	margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+    display: inline-block;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    color: #ddca7e;
+    background: #282c34;
+	padding: .5em .8em;
+    border-radius: .2em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+
+h1,
+h2,
+h3 {
+	text-align: center;
+	margin: 0;
+	padding: 0.5em;
+}
+
+p {
+	margin: 0;
+}
+
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+/* Session Messages */
+
+#message {
+  color: #0055DD;
+  background: white;
+  border: 2px solid #0055DD;
+  padding: 1em 15px;
+  margin: 15px;
+}
+
+/* Header */
+
+.masthead{
+	display: flex;
+	background: hsl(0, 0%, 10%);
+	color: white;
+	flex-direction: row;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	width: 100%;
+
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+
+.nav-top{
+	display: flex;
+	width: 80%;
+	justify-content: space-between;
+	margin: auto;
+}
+
+/* Header */
+.logo,
+.site-title {
+	/*text-align: center;*/
+}
+
+.logo {
+	display: block;
+	float: left;
+	height: 90px;
+	overflow: hidden;
+	padding: 0;
+	text-indent: -9999px;
+	width: 70px;
+}
+
+
+.header-image #description {
+    display: block;
+    overflow: hidden;
+}
+
+
+
+.site-title {
+/*	margin-top: -1em;
+	margin-bottom: 3em;*/
+	font-size: 1.5em;
+}
+
+/* Login Area */
+/* Style the input container */
+.topnav .login-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+.topnav input[type=text], , input[type=password] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.topnav .login-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background: #ccc;
+}
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], input[type=password] .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text], input[type=password] {
+    border: 1px solid #ccc;
+  }
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+}
+
+/* Add some margins for each label */
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+/* Style the input fields */
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* Style the submit button */
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.login {
+  padding-right: 5em;
+  float: left;
+	position: relative;
+	padding-bottom: 0.5em;
+}
+
+.login ul{
+	display: block;
+	width: 100%;
+	list-style-type: none;
+}
+
+.login li {
+	width: 100%;
+}
+input[type="password"], input[type="text"], input[type="time"], input[type="date"], input[type="email"], textarea {
+  background: url('http://i.minus.com/ibhqW9Buanohx2.png') center left no-repeat, linear-gradient(top, #d6d7d7, #dee0e0);
+  border: 1px solid #a1a3a3;
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #676363;
+  height: 39px;
+  transition: box-shadow 0.3s;
+  width: 100%;
+}
+input[type="password"]:focus, input[type="text"]:focus {
+  box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3);
+  outline: 0;
+}
+
+.forgotsub {
+	position: relative;
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+.forgot {
+	color: #7f7f7f;
+	display: block;
+	text-decoration: none;
+	transition: color .4s;
+}
+
+input[type="cancel"] {
+	width: 120px;
+	height: 35px;
+	display: inline-block;
+	font-family: Arial, "Helvetica", sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 1px 1px 0px #37a69b;
+	position: relative;
+	cursor: pointer;
+	border: none;
+	background-color: #37a69b;
+	background-image: linear-gradient(top,#3db0a6,#3111);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+
+}
+
+input[type="button"], input[type="submit"], input[type="cancel"] {
+	height: 35px;
+	display: inline-block;
+	font-family: Arial, "Helvetica", sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 1px 1px 0px #37a69b;
+	position: relative;
+	cursor: pointer;
+	border: none;
+	background-color: #45a010;
+	background-image: linear-gradient(top,#3db0a6,#3111);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	float: right;
+	margin-right: 25px;
+  margin-top: 5px;
+
+}
+.blurit {
+   color: transparent;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.button{
+width: 70px;
+display: inline-block;
+font-family: Arial, "Helvetica", sans-serif;
+font-size: 13px;
+font-weight: bold;
+color: #fff;
+text-decoration: none;
+text-transform: uppercase;
+text-align: center;
+text-shadow: 1px 1px 0px #37a69b;
+cursor: pointer;
+border: none;
+background-color: #45a010;
+background-image: linear-gradient(top,#3db0a6,#3111);
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+float:;
+padding: 0.5em;
+}
+
+
+
+.button1{
+width: 70px;
+display: none;
+font-family: Arial, "Helvetica", sans-serif;
+font-size: 13px;
+font-weight: bold;
+color: #fff;
+text-decoration: none;
+text-transform: uppercase;
+text-align: center;
+text-shadow: 1px 1px 0px #37a69b;
+/* position: relative; */
+cursor: pointer;
+border: none;
+background-color: #45a010;
+background-image: linear-gradient(top,#3db0a6,#3111);
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-left-radius: 5px;
+float:;
+padding: 0.5em;
+}
+
+.favorite .button {
+	display:none ;
+}
+
+.favorite .button1 {
+	display:inline-block ;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type="cancel"] {
+  background-color: #45a050;
+}
+/* form */
+.form{
+	background:#f1f1f1; width:auto; margin:0 auto; padding-left:20px; padding-top:20px; padding-right:20px;
+}
+.form fieldset{border:0px; padding:0px; margin:0px;}
+.form p.contact { margin:0px 0px 0 0;line-height: 14px;}
+
+.form input[type="text"] { width: 100%; }
+.form input[type="email"] { width: 100%; }
+.form input[type="password"] { width: 100%; }
+.form input.birthday{width:60px;}
+.form input.birthyear{width:120px;}
+.form label { color: #000;}
+.form label.month {width: 135px;}
+.form input, textarea { border: 1px solid rgba(122, 192, 0, 0.15);
+	padding: 7px; font-family: Keffeesatz, Arial;
+	color: #4b4b4b;
+	font-size: 14px;
+	-webkit-border-radius: 5px;
+	margin-bottom: 15px;}
+.form input:focus, textarea:focus { box-shadow: 0 0 4px 1px rgba(55, 166, 155, 0.3); outline: 0; }
+.form .select-style {
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url(images/select-arrow.png),
+    -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 0px solid #FFF;
+  color: #555;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;}
+.form .gender {
+  width:100%;
+  }
+.form input.buttom{ background: #37a69b; display: inline-block; padding: 5px 10px 6px; color: #fbf7f7; text-decoration: none; font-weight: bold; line-height: 1; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: 0 1px 3px #999; -webkit-box-shadow: 0 1px 3px #999; box-shadow: 0 1px 3px #999; text-shadow: 0 -1px 1px #222; border: none; position: relative; cursor: pointer; font-size: 14px; font-family:Verdana, Geneva, sans-serif;}
+.form input.buttom:hover	{ background-color: #239e92; }
+
+/* Errors */
+
+.errors {
+  display: inline-block;
+  border: 2px solid red;
+  color: red;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.errors ul {
+  margin-bottom: 0;
+  padding-left: 1em;
+}
+/* Splash section */
+
+.splash {
+	background: #FFF6E5;
+	padding-bottom: 2em;
+}
+
+.splash-content {
+	padding: 1.5em;
+}
+
+@media screen and (min-width: 600px) {
+	.splash-text {
+		columns: 2;
+		column-gap: 2em;
+	}
+
+	.splash-text p {
+		padding-top: 0;
+	}
+}
+
+/* Buckets section */
+
+.buckets {
+	/* padding: 2em 1em 1em; */
+	background: #3E454C;
+	padding-top: 67px;
+}
+
+.buckets ul {
+	margin: 0;
+	padding: 0;
+}
+
+.buckets li {
+	padding-bottom: 0.5em;
+	list-style-type: none;
+}
+
+.sidebar { flex: 1; }
+.main-area { flex: 3;background-color: white}
+.bucket {
+	padding: 0em 1.5em 2em 2em;
+}
+
+/* More section */
+
+.more {
+	padding: 2em;
+}
+
+.more-content {
+	padding: 1.5em;
+}
+
+/* Twins section */
+
+.sidebar {
+	background-color: black;
+}
+
+.twin {
+	padding: 2em;
+	background: #2185C5;
+	color: white;
+}
+
+.twin:last-of-type {
+	background: #FF7F66;
+}
+/*User Menu*/
+.user-menu{
+
+	  display: inline;
+	  padding-top: 1em;
+	  float: left;
+		position: relative;
+}
+/*--------------------------------------------------------------
+Navigation:
+--------------------------------------------------------------*/
+.main-nav {
+font-size: 1.1em;
+color: white;
+background-color: black;
+overflow: auto;
+margin-bottom: 100px;
+margin-top: 50px;
+}
+
+.btn{
+
+	background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 1;
+  transition: 0.3s;
+	font-family: "Lato", sans-serif;
+	text-decoration: none;
+	text-align: center;
+	font-size: 20px;
+
+
+}
+
+.main-nav ul {
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 1em;
+	list-style-type: none;
+	flex-direction: column;
+
+}
+
+.main-nav ul li {
+	margin-bottom: 0;
+  background-color: black;
+}
+
+.main-nav ul li a {
+
+	display: block;
+	color: black;
+	font-family: "Lato", sans-serif;
+	text-decoration: none;
+	font-size: 20px;
+	color: #dbd2d2;
+	padding: 0.8em;
+}
+
+.main-nav a:focus,
+.main-nav a:hover {
+	text-decoration: none;
+  color: #f1f1f1;
+}
+}
+
+/*--------------------------------------------------------------
+Tabels:
+--------------------------------------------------------------*/
+.list {
+}
+
+.post-form tr:nth-child(even){background-color: none}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+}
+
+th {
+	text-align: left;
+	background-color: #acb0b4;
+  font-weight: bold;
+	padding: 8px;
+}
+
+tr {
+  border-bottom:1px solid darkgrey;
+	padding-left: 8px;
+}
+
+td {
+  text-align: left;
+  padding-top: 5px;
+	padding-left: 8px;
+}
+
+tr:nth-child(even){}
+
+.list tr:nth-child(even){background-color: #f2f2f2}
+
+/* Colophon section */
+.colophon {
+	padding: 2em;
+	background: hsl(0, 0%, 10%);
+	color: white;
+	text-align: center;
+}
+
+.colophon a {
+	color: white;
+}
+
+.colophon a:hover,
+.colophon a:focus {
+	border-bottom: 1px solid white;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding:8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=cancel] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+	margin-right: 5px;
+}
+
+input[type=cancel]:hover {
+  background-color: #45a049;
+}
+.container {
+
+  background-color: #f2f2f2;
+  padding: 20px;
+
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+/*--------------------------------------------------------------
+Use flex to create a three-bucket layout
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 700px) {
+	@supports (display: flex) {
+
+		.buckets ul {
+			display: flex;
+			justify-content: space-around;
+			width: 80%;
+      margin: auto;
+		}
+
+		.buckets li {
+			width: 100%;
+		}
+
+	}
+}
+
+/*--------------------------------------------------------------
+Basic responsive layout for all browsers:
+--------------------------------------------------------------*/
+
+.site {
+	max-width: 100%;
+	margin: auto;
+}
+
+/*--------------------------------------------------------------
+Notification
+--------------------------------------------------------------*/
+#notification-header {
+	background: #1a1a1a;
+	padding-top: 15px;
+	padding-right: 5px;
+	text-align:right;
+}
+button#notification-icon {
+	background: transparent;
+	border: 0;
+	position:relative;
+	cursor:pointer;
+}
+#notification-count{
+	position: absolute;
+  top: -5px;
+  left: 15px;
+  padding: 5px 10px;
+  border-radius: 30%;
+  color: white;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+ .notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+.notification1 {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification1:hover {
+  background: red;
+}
+
+.notification1 .badge1 {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  color: red;
+}
+#btn-send {
+	background: #1a1a1a;
+	color: #FFF;
+	padding: 10px 40px;
+	border: 0px;
+}
+
+.dropbtn {
+	background: #1a1a1a;
+	color: #FFF;
+	border: 0px;
+}
+#btn {
+	background: #258bdc;
+	color: #FFF;
+	padding: 10px 40px;
+	border: 0px;
+}
+#form-header {
+	font-size:1.5em;
+}
+#frmNotification {
+	padding:20px 30px;
+}
+.form-row{
+	padding-bottom:20px;
+}
+
+#notification-latest {
+	color: white;
+	position: absolute;
+	right: 0px;
+	background: #1a1a1a;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
+	max-width: 250px;
+	text-align: left;
+}
+.notification-item {
+	padding:10px;
+	border-bottom: #fff 1px solid;
+}
+
+.notification-item :hover {
+	text-decoration: none;
+	color: #f1f1f1;
+	background-color: #555;
+	color: white;
+}
+.notification-subject {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.notification-comment {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-style:italic;
+}
+
+.active,
+.main-nav a:focus,
+.main-nav a:hover {
+	text-decoration: none;
+	color: #f1f1f1;
+	background-color: #555;
+	color: white;
+}
+
+.main-nav .active a{
+	text-decoration: none;
+	color: #f1f1f1;
+	background-color: #555;
+	color: white;
+
+}
+.notification-comment a {
+	text-decoration: none;
+  color: #f1f1f1;
+	font-style:normal;
+	float: right;
+}
+
+.notification-comment a:hover {
+	background-color: #555;
+color: white;
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout for modern browsers:
+--------------------------------------------------------------*/
+/* @supports (grid-area: auto) {
+
+
+
+	@media screen and (min-width: 65em) {
+
+		.site {
+			max-width: none;
+			display: grid;
+			grid-template-columns: 15em minmax(auto, 30em) 15em;
+			justify-content: center;
+		}
+		.masthead {
+			grid-column: 1/4;
+
+		}
+		.feature {
+			grid-column: 2/4;
+		}
+
+		.main-area {
+			grid-column: 1/4;
+		}
+		.sidebar {
+			grid-column: 3/4;
+		}
+
+		.colophon {
+			grid-column: 1/4;
+		}
+
+	}
+
+} */
